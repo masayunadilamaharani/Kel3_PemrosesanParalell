@@ -1,0 +1,12 @@
+import psutil as ps
+cpu = ps.cpu_percent()
+print ("cpu = ",cpu, "%")
+
+memoryUsage = ps.virtual_memory().percent
+print ("memory = ",memoryUsage, "%")
+
+sent=(ps.net_io_counters().bytes_sent)
+received=(ps.net_io_counters().bytes_recv)
+x=int(sent)
+y=int(received)
+print("tx =",x,"bytes rx =",y,"bytes")

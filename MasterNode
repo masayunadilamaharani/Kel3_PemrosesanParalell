@@ -1,0 +1,87 @@
+def VM1():
+    import paramiko
+    import time
+
+    user_name ="root"
+    passwd="extreme5end911"
+    ip="192.168.42.130"
+    ssh_client=paramiko.SSHClient()
+    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh_client.connect(hostname=ip,username=user_name,password=passwd, look_for_keys=False)
+    
+    conn = ssh_client.get_transport().open_session()
+    conn.invoke_shell()
+    conn.send("python3 tugas1.py\n")
+    time.sleep(1)
+    output =conn.recv(65535)
+    print(output.decode("ascii"))
+def VM2():
+    import paramiko
+    import time
+
+    user_name ="root"
+    passwd="extreme5end911"
+    ip="192.168.42.191"
+    ssh_client=paramiko.SSHClient()
+    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh_client.connect(hostname=ip,username=user_name,password=passwd, look_for_keys=False)
+    
+    conn = ssh_client.get_transport().open_session()
+    conn.invoke_shell()
+    conn.send("python3 tugas1.py\n")
+    time.sleep(1)
+    output =conn.recv(65535)
+    print(output.decode("ascii"))
+def VM3():
+    import paramiko
+    import time
+
+    user_name ="root"
+    passwd="extreme5end911"
+    ip="192.168.42.186"
+    ssh_client=paramiko.SSHClient()
+    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh_client.connect(hostname=ip,username=user_name,password=passwd, look_for_keys=False)
+    
+    conn = ssh_client.get_transport().open_session()
+    conn.invoke_shell()
+    conn.send("python3 tugas1.py\n")
+    time.sleep(1)
+    output =conn.recv(65535)
+    print(output.decode("ascii"))
+def VM4():
+    import paramiko
+    import time
+
+    user_name ="root"
+    passwd="extreme5end911"
+    ip="192.168.42.131"
+    ssh_client=paramiko.SSHClient()
+    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh_client.connect(hostname=ip,username=user_name,password=passwd, look_for_keys=False)
+    
+    conn = ssh_client.get_transport().open_session()
+    conn.invoke_shell()
+    conn.send("python3 tugas1.py\n")
+    time.sleep(1)
+    output =conn.recv(65535)
+    print(output.decode("ascii"))
+
+    
+def menu():
+    print("-----------------WELCOME---------------------")
+    print("PILIH SALAH SATU MESIN YANG MAU DI MONITORING")
+    print ("VM1")
+    print ("VM2")
+    print ("VM3")
+    print ("VM4")
+    tampilan=input("YOUR CHOOSE :")
+    if tampilan=='VM1':
+        VM1()
+    elif tampilan=='VM2':
+        VM2()
+    elif tampilan=='VM3':
+        VM3()
+    else :
+        VM4()
+menu()
